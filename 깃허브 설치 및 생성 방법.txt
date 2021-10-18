@@ -1,0 +1,58 @@
+** github 사용법 **
+1. git.exe 설치
+2. 바탕화면에 폴더 생성(temp_it) -> 폴더 우클릭 -> Git Bash Here -> 도스창 뜸
+3. https://github.com/ 접속 후 로그인
+4. 깃허브 프로필 클릭 -> Your repositories -> New 클릭 -> Repository name(풀더명과 동일하게) -> Create repository
+5. git 도스창 ->
+예시)
+echo "# dsf" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+
+중간에 에러 나면
+"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'azx1593@NoteBook.(none)')
+
+-> git config --global user.email "you@example.com"(깃허브 메일주소 : azx1593@naver.com)
+    git config --global user.name "Your Name"(깃허브 이름 : josooik)
+"
+
+git branch -M main
+git remote add origin https://github.com/josooik/dsf.git
+git push -u origin main
+
+입력 후
+
+6. 깃허브 로그인 후 도스창에
+
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 216 bytes | 216.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/josooik/temp_it.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+뜨면 성공
+
+7. 깃허브 새로고침 하면 temp_it 만들어져있음
+
+8. 파이참에 temp_it 위치 열기 -> 밑에 Terminal -> + -> Git Bash 도스창 입력 
+   README 파일 수정 파이참 오른쪽에 "- 4줄 아이콘 클릭 후 수정 가능"
+9. git add . <--- 전체 파일 등록 예비
+   git add ."README" <--- 특정 파일 등록 예비
+10. git commit -m "UPDATE: a function fixed" <-- 반영
+11. git push <--- 웹 사이트에 최종 등록
